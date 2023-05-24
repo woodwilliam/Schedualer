@@ -2,11 +2,16 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var saveBtn = $('#save');
-const dayjs = require('dayjs')
-//import dayjs from 'dayjs' // ES 2015
-dayjs().format()
-
-let dateRightNow = dayjs();
+var textBody = $('#description')
+// getting the date and time for the moment the page is rendered
+let dateRightNow = dayjs().format('dddd, MMMM DD, YYYY');
+let timeRightNow = dayjs().format('h:mm a');
+let hourValue = dayjs().format('h');
+console.log(dateRightNow);
+console.log(timeRightNow);
+console.log(hourValue);
+$('#nowDay').text(dateRightNow)
+$('#nowTime').text(timeRightNow)
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
